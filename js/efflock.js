@@ -11,6 +11,7 @@ $(document).ready(function() {
 		efflock_amounts = getEfflock(cubic_yards);
 		console.log(efflock_amounts);
 		$('#slabs-cubic-yards').html(cubic_yards);
+		$('#slabs-efflock-recommended_5_0').html(efflock_amounts[0]);
 		$('#slabs-efflock-recommended_6_0').html(efflock_amounts[0]);
 		$('#slabs-efflock-recommended_6_5').html(efflock_amounts[1]);
 		$('#slabs-efflock-recommended_7_0').html(efflock_amounts[2]);
@@ -28,6 +29,7 @@ $(document).ready(function() {
 		efflock_amounts = getEfflock(cubic_yards);
 		console.log(efflock_amounts);
 		$('#footings-cubic-yards').html(cubic_yards);
+		$('#footings-efflock-recommended_5_0').html(efflock_amounts[0]);
 		$('#footings-efflock-recommended_6_0').html(efflock_amounts[0]);
 		$('#footings-efflock-recommended_6_5').html(efflock_amounts[1]);
 		$('#footings-efflock-recommended_7_0').html(efflock_amounts[2]);
@@ -44,6 +46,7 @@ $(document).ready(function() {
 		efflock_amounts = getEfflock(cubic_yards);
 		console.log(efflock_amounts);
 		$('#columns-cubic-yards').html(cubic_yards);
+		$('#columns-efflock-recommended_5_0').html(efflock_amounts[0]);
 		$('#columns-efflock-recommended_6_0').html(efflock_amounts[0]);
 		$('#columns-efflock-recommended_6_5').html(efflock_amounts[1]);
 		$('#columns-efflock-recommended_7_0').html(efflock_amounts[2]);
@@ -64,7 +67,7 @@ var calculateColumnarCubicYards = function(diameter, height) {
 }
 
 var getEfflock = function(cubic_yards) {
-	cement_weights = new Array(6.0,6.5,7.0);
+	cement_weights = new Array(5.0,6.0,6.5,7.0);
 	var efflock_amounts = new Array();
 
     for(i=0; i<cement_weights.length; i++) {
@@ -76,7 +79,9 @@ var getEfflock = function(cubic_yards) {
 var calculateEfflock = function(cubic_yards, cement_weight) {
 	console.log('calculateEfflock called');
 	var efflock = 0;
-	if(cement_weight == '6.0') {
+	if(cement_weight == '5.0') {
+		efflock = cubic_yards * 37.6;
+	} else if(cement_weight == '6.0') {
 		efflock = cubic_yards * 45.12;
 	} else if (cement_weight == '6.5') {
 		efflock = cubic_yards * 48.88;
