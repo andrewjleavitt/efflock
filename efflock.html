@@ -15,7 +15,15 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+
+    <style>
+      .help-block {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        color: #737373;
+      }
+    </style>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -30,14 +38,10 @@
   <body>
 
     <div class="container">
-      <div class="header">
-
-        <h3 class="text-muted">efflock calculator</h3>
-      </div>
 
       <div class="row marketing">
-        <div class="col-sm-5">
-          <h4>efflock caculator</h4>
+        <div class="col-sm-4">
+          <h5>EffLock Liquid Admixture Calculator</h5>
           <ul class="nav nav-tabs">
             <li class="active"><a href="#slabs" data-toggle="tab">Slabs</a></li>
             <li><a href="#footings" data-toggle="tab">Footings</a></li>
@@ -47,7 +51,7 @@
           <!-- tab content -->
           <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade in active" id="slabs">
-              <form role="form">
+              <form role="form" >
                 <div class="form-group" >
                   <span class="help-block">Thickness in inches.</span>
                   <input type="number" class="form-control input-sm" id="thickness" placeholder="slab thickness">
@@ -60,13 +64,14 @@
                   <span class="help-block">Length in feet.</span>
                   <input type="number" class="form-control input-sm" id="length" placeholder="slab length">
                 </div>
-                <a href="#" class="btn btn-primary btn-sm">Calculate</a>
+                <a href="#" class="btn btn-danger btn-sm">Calculate</a>
                 <div class="results">
-                  <p>Cubic Yards of Concrete:<span id="slabs-cubic-yards">0</span></p>
-                  <p>Efflock Recommended for 5.0:<span id="slabs-efflock-recommended_5_0">0</span></p>
-                  <p>Efflock Recommended for 6.0:<span id="slabs-efflock-recommended_6_0">0</span></p>
-                  <p>Efflock Recommended for 6.5:<span id="slabs-efflock-recommended_6_5">0</span></p>
-                  <p>Efflock Recommended for 7.0:<span id="slabs-efflock-recommended_7_0">0</span></p>
+                  <p>Approximate cubic yards of concrete:<span id="slabs-cubic-yards">0</span></p>
+                  <p>Minimum EffLock Liquid Admixture recommended:</p>
+                  <p>5.0 bag mix design:<span id="slabs-efflock-recommended_5_0">0</span> oz.<br />
+                  6.0 bag mix design:<span id="slabs-efflock-recommended_6_0">0</span> oz.<br />
+                  6.5 bag mix design:<span id="slabs-efflock-recommended_6_5">0</span> oz.<br />
+                  7.0 bag mix design:<span id="slabs-efflock-recommended_7_0">0</span> oz.</p>
                 </div>
               </form>
             </div>
@@ -84,13 +89,14 @@
                   <span class="help-block">Length in feet.</span>
                   <input type="number" class="form-control input-sm" id="length" placeholder="footing length">
                 </div>
-                <a href="#" class="btn btn-primary btn-sm">Calculate</a>
+                <a href="#" class="btn btn-danger btn-sm">Calculate</a>
                 <div class="results">
-                  <p>Cubic Yards of Concrete:<span id="footings-cubic-yards">0</span></p>
-                  <p>Efflock Recommended for 5.0:<span id="footings-efflock-recommended_5_0">0</span></p>
-                  <p>Efflock Recommended for 6.0:<span id="footings-efflock-recommended_6_0">0</span></p>
-                  <p>Efflock Recommended for 6.6:<span id="footings-efflock-recommended_6_5">0</span></p>
-                  <p>Efflock Recommended for 7.0:<span id="footings-efflock-recommended_7_0">0</span></p>
+                  <p>Approximate cubic yards of concrete:<span id="footings-cubic-yards">0</span></p>
+                  <p>Minimum EffLock Liquid Admixture recommended:</p>
+                  <p>5.0 bag mix design:<span id="footings-efflock-recommended_5_0">0</span> oz.<br />
+                  6.0 bag mix design:<span id="footings-efflock-recommended_6_0">0</span> oz.<br />
+                  6.6 bag mix design:<span id="footings-efflock-recommended_6_5">0</span> oz.<br />
+                  7.0 bag mix design:<span id="footings-efflock-recommended_7_0">0</span> oz.</p>
                 </div>
               </form>
             </div>
@@ -104,13 +110,14 @@
                   <span class="help-block">Heigth in feet.</span>
                   <input type="number" class="form-control input-sm" id="height" placeholder="columns height">
                 </div>
-                <a href="#" class="btn btn-primary btn-sm">Calculate</a>
+                <a href="#" class="btn btn-danger btn-sm">Calculate</a>
                 <div class="results">
-                  <p>Cubic Yards of Concrete:<span id="columns-cubic-yards">0</span></p>
-                  <p>Efflock Recommended for 5.0:<span id="columns-efflock-recommended_5_0">0</span></p>
-                  <p>Efflock Recommended for 6.0:<span id="columns-efflock-recommended_6_0">0</span></p>
-                  <p>Efflock Recommended for 6.5:<span id="columns-efflock-recommended_6_5">0</span></p>
-                  <p>Efflock Recommended for 7.0:<span id="columns-efflock-recommended_7_0">0</span></p>
+                  <p>Approximate cubic yards of concrete:<span id="columns-cubic-yards">0</span></p>
+                  <p>Minimum EffLock Liquid Admixture recommended:</p>
+                  <p>5.0 bag mix design:<span id="columns-efflock-recommended_5_0">0</span> oz.<br />
+                  6.0 bag mix design:<span id="columns-efflock-recommended_6_0">0</span> oz.<br />
+                  6.5 bag mix design:<span id="columns-efflock-recommended_6_5">0</span> oz.<br />
+                  7.0 bag mix design:<span id="columns-efflock-recommended_7_0">0</span> oz.</p>
                 </div>
               </form>
             </div>

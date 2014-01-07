@@ -12,9 +12,9 @@ $(document).ready(function() {
 		console.log(efflock_amounts);
 		$('#slabs-cubic-yards').html(cubic_yards);
 		$('#slabs-efflock-recommended_5_0').html(efflock_amounts[0]);
-		$('#slabs-efflock-recommended_6_0').html(efflock_amounts[0]);
-		$('#slabs-efflock-recommended_6_5').html(efflock_amounts[1]);
-		$('#slabs-efflock-recommended_7_0').html(efflock_amounts[2]);
+		$('#slabs-efflock-recommended_6_0').html(efflock_amounts[1]);
+		$('#slabs-efflock-recommended_6_5').html(efflock_amounts[2]);
+		$('#slabs-efflock-recommended_7_0').html(efflock_amounts[3]);
 	});
 
 	$('#footings a').click(function() {
@@ -30,9 +30,9 @@ $(document).ready(function() {
 		console.log(efflock_amounts);
 		$('#footings-cubic-yards').html(cubic_yards);
 		$('#footings-efflock-recommended_5_0').html(efflock_amounts[0]);
-		$('#footings-efflock-recommended_6_0').html(efflock_amounts[0]);
-		$('#footings-efflock-recommended_6_5').html(efflock_amounts[1]);
-		$('#footings-efflock-recommended_7_0').html(efflock_amounts[2]);
+		$('#footings-efflock-recommended_6_0').html(efflock_amounts[1]);
+		$('#footings-efflock-recommended_6_5').html(efflock_amounts[2]);
+		$('#footings-efflock-recommended_7_0').html(efflock_amounts[3]);
 	});
 
 	$('#columns a').click(function() {
@@ -47,9 +47,9 @@ $(document).ready(function() {
 		console.log(efflock_amounts);
 		$('#columns-cubic-yards').html(cubic_yards);
 		$('#columns-efflock-recommended_5_0').html(efflock_amounts[0]);
-		$('#columns-efflock-recommended_6_0').html(efflock_amounts[0]);
-		$('#columns-efflock-recommended_6_5').html(efflock_amounts[1]);
-		$('#columns-efflock-recommended_7_0').html(efflock_amounts[2]);
+		$('#columns-efflock-recommended_6_0').html(efflock_amounts[1]);
+		$('#columns-efflock-recommended_6_5').html(efflock_amounts[2]);
+		$('#columns-efflock-recommended_7_0').html(efflock_amounts[3]);
 	});
 });
 
