@@ -3,12 +3,6 @@ function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-//  calculate min/max units by square_feet
-function calculate(square_feet) {
-	this.min = Math.round(square_feet / this.max_coverage);
-	this.max = Math.round(square_feet / this.min_coverage);
-}
-
 //  create product recommendation engine that returns number of units of the largest size
 function recommend(square_feet,products) {
 	if(isNumber(square_feet) == false || square_feet < 0) {
@@ -18,7 +12,7 @@ function recommend(square_feet,products) {
 	candidate_product = null;
 	for(i=0; i<products.length;i++) {
 		products[i].calculate(square_feet);
-
+    console.log(products[i]);
 		// handle small areas
 		if(smallest_product == null) {
 			smallest_product = products[i];
@@ -33,7 +27,9 @@ function recommend(square_feet,products) {
 		}
 	}
 
-	return candidate_product.resultString() || smallest_product;
+  console.log(candidate_product);
+
+	return candidate_product.resultString() || smallest_product.resultString();
 }
 
 
@@ -45,7 +41,16 @@ function Product(name,size,oz,min_coverage,max_coverage) {
 	this.oz = oz;
 	this.min_coverage = min_coverage;
 	this.max_coverage = max_coverage;
-	this.calculate = calculate;
+  this.min = 0;
+  this.max = 0;
+}
+
+
+//  calculate min/max units by square_feet
+Product.prototype.calculate = function calculate(square_feet) {
+  this.min = Math.round(square_feet / this.max_coverage);
+  this.max = Math.round(square_feet / this.min_coverage);
+  return this;
 }
 
 Product.prototype.resultString = function resultString() {
