@@ -45,11 +45,10 @@
           <form role="form" >
                 <div class="form-group" >
                   <span class="help-block">Project Square Footage?</span>
-                  <input type="number" class="form-control input-sm" id="thickness" placeholder="square footage">
+                  <input type="number" class="form-control input-sm" id="square-footage" placeholder="square footage">
                 </div>
-                <p><a href="#" class="btn btn-danger btn-sm">Calculate</a><br></p>
+                <p><a href="#" id="btn-calculate" class="btn btn-danger btn-sm">Calculate</a><br></p>
                 <div class="results">
-                  ## - ## of [large (32 oz.) / medium (16 oz.) / small (4 oz.)] ORIGINAL Solid Color Stain kits should be used.
                 </div>
               </form>
         </div>
@@ -57,7 +56,23 @@
     </div> <!-- /container -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="js/efflock.js"></script>
+    <script src="js/stain.js"></script>
+    <script>
+      // ORIGINAL Solid Color Stain
+      original_l = new Product('ORIGINAL Solid Color Stain','Large',32,350,400);
+      original_m = new Product('ORIGINAL Solid Color Stain','Medium',16,175,200);
+      original_s = new Product('ORIGINAL Solid Color Stain','Small',4,45,50);
+      var products = [original_s,original_m,original_l];
+
+      $(document).ready(function() {
+        $('#btn-calculate').click(function(){
+          var square_footage = parseInt($('#square-footage').val());
+          var result_string = recommend(square_footage,products)
+          $('.results').html(result_string);
+        });
+      });
+
+    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>efflock calculator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+
+    <!-- Custom styles for this template -->
+
+    <style>
+      .help-block {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        color: #737373;
+      }
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="row marketing">
+        <div class="col-sm-4">
+          <h5>SmartColor</h5>
+
+          <!-- tab content -->
+          <form role="form" >
+                <div class="form-group" >
+                  <span class="help-block">Project Square Footage?</span>
+                  <input type="number" class="form-control input-sm" id="square-footage" placeholder="square footage">
+                </div>
+                <p><a href="#" id="btn-calculate" class="btn btn-danger btn-sm">Calculate</a><br></p>
+                <div class="results">
+                </div>
+              </form>
+        </div>
+
+    </div> <!-- /container -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="js/stain.js"></script>
+    <script>
+      // ORIGINAL Solid Color Stain
+      smartcolor_xl = new Product('SmartColor','5-Gallon',640,5000,8000);
+      smartcolor_l  = new Product('SmartColor','1-Gallon',128,1000,1600);
+      smartcolor_m  = new Product('SmartColor','33 oz.',33,250,400);
+      smartcolor_s  = new Product('SmartColor','4 oz.',4,35,50);
+      var products = [smartcolor_s,smartcolor_m,smartcolor_l, smartcolor_xl];
+
+      $(document).ready(function() {
+        $('#btn-calculate').click(function(){
+          var square_footage = parseInt($('#square-footage').val());
+          var result_string = recommend(square_footage,products)
+          $('.results').html(result_string);
+        });
+      });
+
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
