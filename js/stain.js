@@ -33,7 +33,7 @@ function recommend(square_feet,products) {
 		}
 	}
 
-	return candidate_product || smallest_product;
+	return candidate_product.resultString() || smallest_product;
 }
 
 
@@ -46,7 +46,15 @@ function Product(name,size,oz,min_coverage,max_coverage) {
 	this.min_coverage = min_coverage;
 	this.max_coverage = max_coverage;
 	this.calculate = calculate;
-	// this.result_string = this.min + " - " + this.max + " of " + this.size + " " + this.name + " kits should be used.";
+}
+
+Product.prototype.resultString = function resultString() {
+  if(this.min == this.max) {
+    var string = this.max + " " + this.size + " " + this.name + " " + (this.max == 1 ? "kit" : " kits") + " should be used.";
+  } else {
+    var string = this.min + " - " + this.max + " " + this.size + " " + this.name + " kits should be used.";
+  }
+  return string;
 }
 
 function run_tests() {
@@ -93,4 +101,4 @@ function run_tests() {
 	console.log(recommend(3001,tique_products));
 	console.log(recommend(12001,tique_products));
 }
-run_tests();
+// run_tests();
