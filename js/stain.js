@@ -27,9 +27,12 @@ function recommend(square_feet,products) {
 		}
 	}
 
-  console.log(candidate_product);
 
-	return candidate_product.resultString() || smallest_product.resultString();
+  console.log(candidate_product);
+  smallest_product.max = 1;
+  smallest_product.min = 1;
+
+	return !candidate_product ? smallest_product.resultString() : candidate_product.resultString();
 }
 
 
@@ -102,8 +105,10 @@ function run_tests() {
 	tique = new Product('TiqueWash','Standard',48,2000,3000);
 	tique_products = [tique];
 
-	console.log(recommend(2001,tique_products));
+  console.log(recommend(2001,tique_products));
 	console.log(recommend(3001,tique_products));
 	console.log(recommend(12001,tique_products));
+  console.log(recommend(1,tique_products));
+
 }
 // run_tests();
