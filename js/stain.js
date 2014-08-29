@@ -12,7 +12,7 @@ function recommend(square_feet,products) {
 	candidate_product = null;
 	for(i=0; i<products.length;i++) {
 		products[i].calculate(square_feet);
-    console.log(products[i]);
+    // console.log(products[i]);
 		// handle small areas
 		if(smallest_product == null) {
 			smallest_product = products[i];
